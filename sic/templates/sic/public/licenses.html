@@ -1,0 +1,24 @@
+{% extends "sic/public/base.html" %}
+{% load static %}
+
+{% block title %}[sic]{% endblock %}
+
+{% block content %}
+
+<h1>License List</h1>
+
+
+<table class="table table-striped">
+    <thead>
+        <th>Name</th>
+    </thead>
+{% for license in licenses %}
+    <tr>
+        <td>
+            <a href="/license/{{license.hash}}/" >{{license.name}}</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

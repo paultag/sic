@@ -1,0 +1,52 @@
+{% extends "sic/public/base.html" %}
+{% load static %}
+
+{% block title %}[sic]{% endblock %}
+
+{% block head %}
+    <script src="{% static "js/codemirror.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/codemirror.css" %}">
+    <link rel="stylesheet" href="{% static "css/themes/neo.css" %}">
+    <link rel="stylesheet" href="{% static "css/license.css" %}">
+{% endblock %}
+
+{% block nav %}
+            <li><a id='comment' data-toggle="modal" data-target=".bs-example-modal-lg" href="#">Comment</a></li>
+{% endblock %}
+
+{% block content %}
+    <p>
+        <textarea id="code">
+{{license.text}}
+        </textarea>
+    </p>
+
+    <div id='modal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Comment</h4>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-thumbs-o-down"></i>
+                <i class="fa fa-thumbs-o-up"></i>
+
+                <input type='hidden' id='start_line' name='start_line' ></input>
+                <input type='hidden' id='end_line' name='end_line' ></input>
+                <input type='hidden' id='start_ch' name='start_ch' ></input>
+                <input type='hidden' id='end_ch' name='end_ch' ></input>
+
+                <pre id='quoted-text'></pre>
+                <textarea id="comment-text" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="submit-comment" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static "js/license.min.js" %}"></script>
+{% endblock %}

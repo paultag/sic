@@ -1,0 +1,60 @@
+HACKING ON [sic]
+================
+
+Hey there! Welcome!
+
+
+QUICKSTART
+----------
+
+Let's make sure the submodules are good (or clone with `--recursive`)
+
+```
+git submodule init
+git submodule update
+```
+
+We need some stuff on the host:
+
+```
+sudo apt-get install \
+    python3 \
+    virtualenvwrapper \
+    node-less \
+    coffeescript \
+    npm \
+    nodejs-legacy
+```
+
+Now, let's set up our Python setup:
+
+```
+make -C scripts
+cd third-party/jquery
+npm run build
+cd -
+
+mkvirtualenv --python=$(which python3) sic
+workon sic
+
+pip install -r requirements.txt
+
+# Let's first set a secret key - the value of this isn't super important
+# during development. Pick something secure for production. Lots of entropy.
+export SECRET_KEY=$(uuid)
+# And, now, let's set Django to Debug mode for development
+export DJANGO_DEBUG=True
+./manage.py migrate
+./manage.py loadlicense AGPLv3 LICENSE.AGPL
+./manage.py runserver
+```
+
+And hack!
+
+
+SENDING PATCHES
+===============
+
+
+Be sure that you've added yourself to the AUTHORS file, even for one-char
+changes!

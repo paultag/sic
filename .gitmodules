@@ -1,0 +1,12 @@
+[submodule "third-party/bootstrap"]
+	path = third-party/bootstrap
+	url = git://github.com/twbs/bootstrap.git
+[submodule "third-party/font-awesome"]
+	path = third-party/font-awesome
+	url = git://github.com/FortAwesome/Font-Awesome.git
+[submodule "third-party/codemirror"]
+	path = third-party/codemirror
+	url = git://github.com/codemirror/CodeMirror.git
+[submodule "third-party/jquery"]
+	path = third-party/jquery
+	url = git://github.com/jquery/jquery.git

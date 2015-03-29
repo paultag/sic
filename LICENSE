@@ -1,0 +1,11 @@
+The [sic] project is licensed under the AGPLv3 or later. You should have
+recived a copy of the AGPL in a file called 'LICENSE.AGPL'. Please review that
+file for all the rights and requirements you have as a user or distributor of
+this software.
+
+Some files and folders have different licenses
+
+    *                                      (AGPLv3+)
+    third-party/codemirror/LICENSE         (MIT/Expat)
+    third-party/bootstrap/LICENSE          (MIT/Expat)
+    third-party/font-awesome/README.md     (SIL OFL 1.1, MIT/Expat, CC-BY-3.0)
